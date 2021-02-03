@@ -16,20 +16,20 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // Handle response here
+        // Handles response from Cotter's login
         String resp = IdentityManager.handleResponse(getIntent());
         if (resp != null) {
             Log.i("Login Response: ", resp);
         }
 
-        // Handle error here
+        // Handles error here
         String error = IdentityManager.handleError(getIntent());
         if (error != null) {
             Log.i("Login Error: ", error);
         }
     }
 
-    // Returns back to homepage
+    // Allows user to return to homepage on click
     public void signOut(View view) {
         Intent in = new Intent(this, MainActivity.class);
         startActivity(in);
